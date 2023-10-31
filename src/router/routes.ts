@@ -1,14 +1,20 @@
 import { RouteRecordRaw } from 'vue-router';
+import { Pages } from './pages';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
       {
-        path: 'create-species',
-        component: () => import('pages/CreateSpecies.vue'),
+        path: '',
+        name: Pages.indexPage,
+        component: () => import('pages/IndexPage.vue'),
+      },
+      {
+        path: 'species-create',
+        name: Pages.speciesCreate,
+        component: () => import('pages/SpeciesCreate/CreateForm.vue'),
       },
     ],
   },

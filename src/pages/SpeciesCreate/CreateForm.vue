@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page>
     <month-picker
       v-model="form.flowering"
       :label="t('species.model.flowering')"
