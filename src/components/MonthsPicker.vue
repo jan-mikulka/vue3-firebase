@@ -15,8 +15,7 @@ type ValidMonthRange = {
 type MonthRange = Nullable<ValidMonthRange>;
 
 const props = defineProps<{
-  modelValue?: number[];
-  label?: string;
+  modelValue: number[];
 }>();
 
 const emit = defineEmits<{
@@ -51,7 +50,6 @@ const clearValue = () => {
 <template>
   <q-list dense class="q-ma-md q-pt-lg">
     <q-item>
-      <q-item-section avatar>{{ $props.label }}</q-item-section>
       <q-item-section>
         <q-range
           v-model="internalMonthRange"
